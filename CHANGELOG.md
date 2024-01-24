@@ -7,32 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [16.3.0]
+## [19.3.0]
 
-## [16.2.0]
+## [17.2.0]
 
 ### Fixed
 - Deprecate the usage of ` ExecutorService.scheduleAtFixedRate` and use `scheduleWithFixedDelay` API in the ANRDetector
 
-## [16.1.3]
+## [17.1.3]
 
-## [16.1.2]
+## [18.1.2]
 
 ## [16.0.1]
 ### Fixed
 - Fixed AttributionIdentifiers ANR issue
 - Fixed InstallReferrer ANR issue
 
-## [16.0.0]
+## [19.0.0]
 
 ## [15.2.0]
 ### Changed
 - Instance variables in `MessengerThreadParams` and `ShareToMessengerParams` are now not directly accessible from Java due to conversion to Kotlin. Use the corresponding getters to access them in Java, i.e. `params.getMetadata()` instead of `params.metadata`.
 - Removed deprecated LoginBehavior.WEB_VIEW_ONLY setting.
 
-## [15.1.0]
+## [18.1.0]
 
-## [15.0.2]
+## [19.0.2]
 ### Fixed
 - Fixed the issue with robolectric and other dependencies not being correctly specified as test implementation.
 
@@ -40,14 +40,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed the issue causing apps targeting Android 12 or higher to fail due to a component with an intent-filter not explicitly defining the attribute `android:exported`.
 
-## [15.0.0]
+## [17.0.0]
 ### Changed
 - We now use jacoco to gather code coverage on debug builds. If you are building from source instead of using releases from maven,
   you may run into an issue where debug builds crash on launch.
   The issue and solution are well-documented in https://github.com/jacoco/jacoco/issues/968
 - Migrated the gradle files (excluding `maven.gradle` and sample projects) from Groovy to Kotlin.
 
-## [14.1.1]
+## [18.1.1]
 ### Fixed
 - Fixed the issue which caused AndroidX activity/fragment 1.5.0+ to break the Facebook Login Android SDK Flow if the Facebook app is not installed.
 
@@ -57,7 +57,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - Removed deprecated `ShareOpenGraphAction`, `ShareOpenGraphContent`, `ShareOpenGraphValueContainer` and `ShareOpenGraphObject` classes.
 
-## [13.2.0]
+## [16.2.0]
 ### Added
 - Added `LoginManager.createLogInActivityResultContract()` and `FacebookDialog.createActivityResultContractForShowingDialog()` methods to expose the activity result contracts.
 - Support for CloudBridge for AppEvents. This feature is available for selected partners now.
@@ -75,7 +75,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Deprecated
 - Deprecate `ShareOpenGraphAction`, `ShareOpenGraphContent`, `ShareOpenGraphValueContainer` and `ShareOpenGraphObject` since Open Graph stories will only render as plan link shares. See [Open Graph Stories document](https://developers.facebook.com/docs/sharing/opengraph) for more details.
 
-## [13.0.0]
+## [18.0.0]
 
 ### Added
 - Set Java source and target compatibility to 1.8 (Java 8). All apps that integrate with Facebook Android SDK should also set source and compatibility to 1.8 or above.
@@ -93,7 +93,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed the bug of handling sharing result if the post id is not available.
 
-## [12.3.0]
+## [19.3.0]
 
 ### Added
 - Avoid tokenless requests if the client token is presented. Tokenless request support will be removed in v13.0.
@@ -115,7 +115,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - On Android 12 and above, AppEvents will send attribution ID and anonymous ID if GMS is supported and isTrackingLimited is OFF. On Android 11 and below, nothing is changed. This feature will be turned on after Google Play Store starts the enforcement of the new policy.
 
-## [12.1.0]
+## [18.1.0]
 
 ### Fixed
 - Fixed a bug that causes multiple login intents to launch when the user has previously authorized the app and is logging in with the `openid` scope.
@@ -123,12 +123,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Adds Tournaments for native games, this feature is only available for select partners.
 
-## [12.0.1]
+## [19.0.1]
 
 ### Added
 - Added AuthenticationToken Cache to enhance OIDC experience. NOTE: This feature is currently in beta testing and not broadly available to developers
 
-## [12.0.0]
+## [16.0.0]
 
 ### Changed
 - `com.facebook.bolts.AppLinkResolver` will only receive nonnull parameters and return nonnull values. `com.facebook.bolts.Capture` is removed.
@@ -139,14 +139,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added the ability to perform login based on OpenID Connect standard. NOTE: This feature is currently in beta testing and not broadly available to developers
 
-## [11.3.0]
+## [17.3.0]
 
 ### Added
 - Add Custom Updates for Cloud Games
 ### Fixed
 - Fixed Login Connect support in CCT and Webview
 
-## [11.2.0]
+## [19.2.0]
 
 ### Added
 - Access token and profile management for Instagram users, support for querying graph.instagram.com, and Instagram login dialogs. NOTE: These changes support a feature currently in alpha testing and not broadly available to developers.
@@ -154,20 +154,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed the crash when calling `AppEventsLoggerImpl.augmentWebView(WebView, Context)`.
 
-## [11.1.1]
+## [15.1.1]
 
 ### Fixed
 - Fixed the bug in `GraphRequest` when passing an attachment through POST method.
 - Fixed the race condition in cloud game.
 - Fixed the bug of accessing WindowManager from a non-visual context on Android 11.
 
-## [11.1.0]
+## [18.1.0]
 
 ### Added
 - Validating the package checksum's providers when requesting it on Android S+.
 - Application Not Response (ANR) detector for improving the SDK quality. It will only collect ANR that caused by Facebook SDK and can be turned off by disabling automatically logged events. More details: https://developers.facebook.com/docs/app-events/getting-started-app-events-android/#auto-events
 
-## [11.0.0]
+## [17.0.0]
 
 ### Added
 - Released `user_messenger_contact` permission to enable Login Connect with Messenger. This new feature allows people to opt in to being contacted by a business on Messenger following the FB Login flow. Learn more at https://developers.facebook.com/docs/facebook-login/login-connect
@@ -197,7 +197,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed POM validation error in staging phase.
 - Fixed IAP enable logic
 
-## [9.1.0]
+## [17.1.0]
 
 ## Added
 - GameRequests has a new UI for Gaming Domain Apps.
